@@ -24,7 +24,6 @@
             user-select: none;
         }
 
-        /* Навигация по дням недели */
         .tabs {
             display: flex;
             justify-content: space-between;
@@ -56,7 +55,6 @@
             color: #ffffff;
         }
 
-        /* Контент дней */
         .day-content {
             display: none;
         }
@@ -65,7 +63,6 @@
             display: block;
         }
 
-        /* Карточка пары */
         .lesson-card {
             background-color: var(--secondary-bg);
             border-radius: 12px;
@@ -96,7 +93,6 @@
 
         .type {
             font-weight: 600;
-            color: #e67e22;
         }
         
         .type.lk { color: #2ecc71; }
@@ -130,6 +126,18 @@
             border-radius: 4px;
             align-self: flex-start;
         }
+
+        /* Оптимизация для списка подгрупп */
+        .subgroups-list {
+            margin-top: 4px;
+            padding-left: 15px;
+            font-size: 13px;
+            color: var(--text-color);
+            border-left: 2px solid var(--hint-color);
+        }
+        .subgroup-item {
+            margin-bottom: 3px;
+        }
     </style>
 </head>
 <body>
@@ -145,22 +153,22 @@
     <div id="mon" class="day-content active">
         <div class="lesson-card">
             <div class="lesson-header">
-                <span class="time">10:00 - 11:20</span>
-                <span class="type lk">[1] Лк</span>
-            </div>
-            <div class="title">Информатика 1</div>
-            <div class="teacher">👤 Жумабаева А.Н.</div>
-            <div class="place">📍 2-корпус, ауд. 2/530</div>
-            <div class="week-info">🗓 1-16 недели</div>
-        </div>
-        <div class="lesson-card">
-            <div class="lesson-header">
                 <span class="time">11:30 - 12:50</span>
-                <span class="type pr">Пр</span>
+                <span class="type pr">[1] Пр</span>
             </div>
             <div class="title">Физическая культура и спорт</div>
             <div class="teacher">👤 Зав. кафедрой</div>
             <div class="place">📍 2-корпус, ауд. Стадион</div>
+            <div class="week-info">🗓 1-16 недели</div>
+        </div>
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <span class="time">13:00 - 14:20</span>
+                <span class="type lk">[1] Лк</span>
+            </div>
+            <div class="title">Базы данных</div>
+            <div class="teacher">👤 Жумабаева А.Н.</div>
+            <div class="place">📍 2-корпус, ауд. 2/530</div>
             <div class="week-info">🗓 1-16 недели</div>
         </div>
     </div>
@@ -169,32 +177,58 @@
         <div class="lesson-card">
             <div class="lesson-header">
                 <span class="time">10:00 - 11:20</span>
-                <span class="type lb">Знаменатель | Лб</span>
+                <span class="type lb">[2] Лб</span>
             </div>
-            <div class="title">Физика</div>
-            <div class="teacher">👤 Мурзаибраимова Б.Б., Ибраимова К.Б.</div>
-            <div class="place">📍 1-корпус, ауд. 1/431</div>
-            <div class="week-info">🗓 1-16 недели</div>
-        </div>
-        <div class="lesson-card">
-            <div class="lesson-header">
-                <span class="time">10:00 - 11:20</span>
-                <span class="type pr">Числитель | Пр</span>
-            </div>
-            <div class="title">Физика</div>
-            <div class="teacher">👤 Мурзаибраимова Б.Б.</div>
-            <div class="place">📍 1-корпус, ауд. 1/430</div>
-            <div class="week-info">🗓 1-16 недели</div>
+            <div class="title">Базы данных</div>
+            <div class="teacher">👤 Жумабаева А.Н.</div>
+            <div class="place">📍 2-корпус, ауд. 2/503</div>
+            <div class="week-info">🗓 9-16 недели</div>
         </div>
         <div class="lesson-card">
             <div class="lesson-header">
                 <span class="time">11:30 - 12:50</span>
-                <span class="type pr">[1] Пр</span>
+                <span class="type pr">Пр</span>
             </div>
-            <div class="title">Математика 1</div>
-            <div class="teacher">👤 Эркинбаева А.М.</div>
-            <div class="place">📍 3-корпус, ауд. 3/215</div>
+            <div class="title">История Кыргызстана</div>
+            <div class="teacher">👤 Кунтубаева А.А.</div>
+            <div class="place">📍 1-корпус, ауд. 1/114</div>
             <div class="week-info">🗓 1-16 недели</div>
+        </div>
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <span class="time">13:00 - 14:20</span>
+                <span class="type pr">Пр (По подгруппам)</span>
+            </div>
+            <div class="title">Кыргызский язык</div>
+            <div class="place">📍 2-корпус | 🗓 1-16 недели</div>
+            <div class="subgroups-list">
+                <div class="subgroup-item"><b>[1]</b> Исмаилова Д.Н. (ауд. 2/509)</div>
+                <div class="subgroup-item"><b>[2]</b> Исираилова А.М. (ауд. 2/524)</div>
+                <div class="subgroup-item"><b>[3]</b> Саякбаева А.Б. (ауд. 2/604)</div>
+                <div class="subgroup-item"><b>[4]</b> Шаршенова Р.А. (ауд. 2/607)</div>
+                <div class="subgroup-item"><b>[5]</b> Дуйшоева Ш.А. (ауд. 2/615)</div>
+                <div class="subgroup-item"><b>[6]</b> Молдалиева Н.А. (ауд. 2/119)</div>
+                <div class="subgroup-item"><b>[7]</b> Казиева С.М. (ауд. 2/608)</div>
+                <div class="subgroup-item"><b>[8]</b> Джолдошбаева К.М. (ауд. 2/330)</div>
+            </div>
+        </div>
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <span class="time">15:00 - 16:20</span>
+                <span class="type pr">Числитель | Пр</span>
+            </div>
+            <div class="title">Кыргызский язык</div>
+            <div class="place">📍 2-корпус | 🗓 1-16 недели</div>
+            <div class="subgroups-list">
+                <div class="subgroup-item"><b>[1]</b> Исмаилова Д.Н. (ауд. 2/509)</div>
+                <div class="subgroup-item"><b>[2]</b> Исираилова А.М. (ауд. 2/524)</div>
+                <div class="subgroup-item"><b>[3]</b> Саякбаева А.Б. (ауд. 2/604)</div>
+                <div class="subgroup-item"><b>[4]</b> Шаршенова Р.А. (ауд. 2/607)</div>
+                <div class="subgroup-item"><b>[5]</b> Дуйшоева Ш.А. (ауд. 2/615)</div>
+                <div class="subgroup-item"><b>[6]</b> Молдалиева Н.А. (ауд. 2/119)</div>
+                <div class="subgroup-item"><b>[7]</b> Казиева С.М. (ауд. 2/608)</div>
+                <div class="subgroup-item"><b>[8]</b> Джолдошбаева К.М. (ауд. 2/330)</div>
+            </div>
         </div>
     </div>
 
@@ -202,27 +236,27 @@
         <div class="lesson-card">
             <div class="lesson-header">
                 <span class="time">10:00 - 11:20</span>
-                <span class="type lk">Числитель | [1] Лк</span>
+                <span class="type pr">Числитель | Пр</span>
             </div>
-            <div class="title">Психология коммуникаций</div>
-            <div class="teacher">👤 Рабидинова А.Д.</div>
-            <div class="place">📍 2-корпус, ауд. 2/614</div>
-            <div class="week-info">🗓 1-16 недели</div>
+            <div class="title">Манасоведение</div>
+            <div class="teacher">👤 Бийгельдиева Ч.А.</div>
+            <div class="place">📍 1-корпус, ауд. 1/114</div>
+            <div class="week-info">🗓 1-7 недели</div>
         </div>
         <div class="lesson-card">
             <div class="lesson-header">
                 <span class="time">11:30 - 12:50</span>
-                <span class="type lk">Лк</span>
+                <span class="type lk">Числитель | Лк</span>
             </div>
-            <div class="title">Физика</div>
-            <div class="teacher">👤 Турдубаева Ч.Б.</div>
-            <div class="place">📍 1-корпус, ауд. 1/423</div>
+            <div class="title">Основы программирования</div>
+            <div class="teacher">👤 Саякова Н.И.</div>
+            <div class="place">📍 2-корпус, ауд. 2/529</div>
             <div class="week-info">🗓 1-16 недели</div>
         </div>
         <div class="lesson-card">
             <div class="lesson-header">
                 <span class="time">13:00 - 14:20</span>
-                <span class="type pr">Пр</span>
+                <span class="type pr">[1] Пр</span>
             </div>
             <div class="title">Физическая культура и спорт</div>
             <div class="teacher">👤 Зав. кафедрой</div>
@@ -232,11 +266,11 @@
         <div class="lesson-card">
             <div class="lesson-header">
                 <span class="time">15:00 - 16:20</span>
-                <span class="type lk">[1] Лк</span>
+                <span class="type lb">[2] Лб</span>
             </div>
-            <div class="title">Основы лингвистической экспертизы</div>
-            <div class="teacher">👤 Карабаева С.Ж.</div>
-            <div class="place">📍 2-корпус, ауд. 2/333</div>
+            <div class="title">Базы данных</div>
+            <div class="teacher">👤 Жумабаева А.Н.</div>
+            <div class="place">📍 2-корпус, ауд. 2/503</div>
             <div class="week-info">🗓 1-16 недели</div>
         </div>
     </div>
@@ -245,51 +279,41 @@
         <div class="lesson-card">
             <div class="lesson-header">
                 <span class="time">10:00 - 11:20</span>
-                <span class="type pr">[1] Пр</span>
+                <span class="type pr">Пр</span>
             </div>
-            <div class="title">Дискретная математика</div>
-            <div class="teacher">👤 Абдиева Л.К.</div>
-            <div class="place">📍 2-корпус, ауд. 2/618</div>
+            <div class="title">Основы программирования</div>
+            <div class="teacher">👤 Саякова Н.И.</div>
+            <div class="place">📍 2-корпус, ауд. 2/503</div>
             <div class="week-info">🗓 1-16 недели</div>
         </div>
         <div class="lesson-card">
             <div class="lesson-header">
                 <span class="time">11:30 - 12:50</span>
-                <span class="type pr">[1] Пр</span>
+                <span class="type pr">Пр</span>
             </div>
-            <div class="title">Иностранный язык</div>
-            <div class="teacher">👤 Иманалиева А.И.</div>
-            <div class="place">📍 5-корпус, ауд. 5/04</div>
-            <div class="week-info">🗓 1-16 недели</div>
-        </div>
-        <div class="lesson-card">
-            <div class="lesson-header">
-                <span class="time">11:30 - 12:50</span>
-                <span class="type lb">[2] Лб</span>
-            </div>
-            <div class="title">Основы лингвистической экспертизы</div>
-            <div class="teacher">👤 Карабаева С.Ж.</div>
-            <div class="place">📍 1-корпус, ауд. 1/115</div>
+            <div class="title">Информатика 2</div>
+            <div class="teacher">👤 Убайдылдаева Н.А.</div>
+            <div class="place">📍 2-корпус, ауд. 2/502</div>
             <div class="week-info">🗓 1-16 недели</div>
         </div>
         <div class="lesson-card">
             <div class="lesson-header">
                 <span class="time">13:00 - 14:20</span>
-                <span class="type lk">[1] Лк</span>
+                <span class="type lk">Числитель | Лк</span>
             </div>
-            <div class="title">Дискретная математика</div>
-            <div class="teacher">👤 Абдиева Л.К.</div>
-            <div class="place">📍 2-корпус, ауд. 2/618</div>
+            <div class="title">История Кыргызстана</div>
+            <div class="teacher">👤 Кунтубаева А.А.</div>
+            <div class="place">📍 2-корпус, ауд. 2/616</div>
             <div class="week-info">🗓 1-16 недели</div>
         </div>
         <div class="lesson-card">
             <div class="lesson-header">
-                <span class="time">15:00 - 16:20</span>
-                <span class="type lb">[1] Лб</span>
+                <span class="time">13:00 - 14:20</span>
+                <span class="type lk">Знаменатель | Лк</span>
             </div>
-            <div class="title">Основы лингвистической экспертизы</div>
-            <div class="teacher">👤 Карабаева С.Ж.</div>
-            <div class="place">📍 2-корпус, ауд. 2/309</div>
+            <div class="title">Манасоведение</div>
+            <div class="teacher">👤 Бийгельдиева Ч.А.</div>
+            <div class="place">📍 2-корпус, ауд. 2/616</div>
             <div class="week-info">🗓 1-16 недели</div>
         </div>
     </div>
@@ -300,84 +324,75 @@
                 <span class="time">10:00 - 11:20</span>
                 <span class="type pr">Знаменатель | Пр</span>
             </div>
-            <div class="title">Психология коммуникаций</div>
-            <div class="teacher">👤 Рабидинова А.Д.</div>
-            <div class="place">📍 5-корпус, ауд. 5/05</div>
-            <div class="week-info">🗓 4-11 недели</div>
+            <div class="title">Основы программирования</div>
+            <div class="teacher">👤 Саякова Н.И.</div>
+            <div class="place">📍 2-корпус, ауд. 2/502</div>
+            <div class="week-info">🗓 1-16 недели</div>
         </div>
         <div class="lesson-card">
             <div class="lesson-header">
                 <span class="time">11:30 - 12:50</span>
-                <span class="type pr">Пр</span>
+                <span class="type lk">Лк</span>
             </div>
-            <div class="title">Иностранный язык</div>
-            <div class="teacher">👤 Кадыралиева Д.Ж.</div>
-            <div class="place">📍 2-корпус, ауд. 2/511</div>
+            <div class="title">Информатика 2</div>
+            <div class="teacher">👤 Жумабаева А.Н.</div>
+            <div class="place">📍 2-корпус, ауд. 2/529</div>
             <div class="week-info">🗓 1-16 недели</div>
         </div>
         <div class="lesson-card">
             <div class="lesson-header">
                 <span class="time">13:00 - 14:20</span>
-                <span class="type pr">Пр</span>
+                <span class="type lk">Лк</span>
             </div>
-            <div class="title">Информатика 1</div>
-            <div class="teacher">👤 Жумабаева А.Н.</div>
-            <div class="place">📍 2-корпус, ауд. 2/403</div>
+            <div class="title">Математика 2</div>
+            <div class="teacher">👤 Аблабекова Ч.А.</div>
+            <div class="place">📍 2-корпус, ауд. 2/618</div>
             <div class="week-info">🗓 1-16 недели</div>
         </div>
         <div class="lesson-card">
             <div class="lesson-header">
                 <span class="time">15:00 - 16:20</span>
-                <span class="type lk">Лк</span>
+                <span class="type pr">Пр</span>
             </div>
-            <div class="title">Математика 1</div>
-            <div class="teacher">👤 Аблабекова Ч.А.</div>
-            <div class="place">📍 2-корпус, ауд. 2/617</div>
+            <div class="title">Математика 2</div>
+            <div class="teacher">👤 Эркинбаева А.М.</div>
+            <div class="place">📍 2-корпус, ауд. 2/626</div>
             <div class="week-info">🗓 1-16 недели</div>
         </div>
     </div>
 
     <script>
-        // Инициализируем Telegram WebApp
         const tg = window.Telegram.WebApp;
         tg.ready();
         tg.expand();
 
-        // Логика переключения вкладок
         function switchDay(dayId) {
-            // Скрываем все дни
             document.querySelectorAll('.day-content').forEach(day => {
                 day.classList.remove('active');
             });
-            // Деактивируем все кнопки
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
 
-            // Показываем нужный день и активируем кнопку
             document.getElementById(dayId).classList.add('active');
-            event.currentTarget.classList.add('active');
             
-            // Легкая вибрация при переключении (работает на смартфонах в ТГ)
+            // Находим нужную кнопку и делаем её активной
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                if(btn.getAttribute('onclick').includes(dayId)) {
+                    btn.classList.add('active');
+                }
+            });
+            
             if (tg.HapticFeedback) {
                 tg.HapticFeedback.impactOccurred('light');
             }
         }
 
-        // Автоматическое открытие текущего дня недели (если это Пн-Пт)
-        const currentDay = new Date().getDay(); // 0 - Вс, 1 - Пн, ..., 5 - Пт, 6 - Сб
+        const currentDay = new Date().getDay();
         const daysMap = {1: 'mon', 2: 'tue', 3: 'wed', 4: 'thu', 5: 'fri'};
         
         if (daysMap[currentDay]) {
             switchDay(daysMap[currentDay]);
-            // Корректируем активную кнопку в дизайне
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                if(btn.getAttribute('onclick').includes(daysMap[currentDay])) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
         }
     </script>
 </body>
